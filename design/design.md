@@ -4,8 +4,9 @@ We followed the diagonal format, where the top few lines are longer and the bott
 
 We also clumped together all the tasks, since they are associated together, with the completed tasks on top. ANOTHER PIC
 ### Alternative designs
-We decided to use green for the "Done" and "Delete completed" buttons,
-since green is associated with growing, natural, and successful. PIC HERE
+We decided to use green for the "Done" and "Add" buttons,
+since green is associated with growing, natural, and successful. 
+Similarly, we used red for the "Delete completed" button, since apps typically use green for yes and red for no. PIC HERE
 ### User testing
 ### Challenges we faced
 We had a bit of trouble in the beginning with getting used to pulling before doing any work and pushing after completing some tasks.
