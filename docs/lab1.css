@@ -1,0 +1,45 @@
+body{
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+
+.todo {
+    font-size:15px;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+#submit {
+    background-color: #90ee90; /* Green */
+    border: none;
+    color: #20603d;
+    padding: 2px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+#add{
+    background-color: #3cb371; /* Green */
+    border: none;
+    color: white;
+    padding: 4px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+#delete{
+    background-color: #800000; /* Green */
+    border: none;
+    color: white;
+    padding: 4px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
