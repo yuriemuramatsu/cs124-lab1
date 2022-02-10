@@ -25,6 +25,18 @@ Similarly, we used red for the "Delete completed" button, since apps typically u
 
 [//]: # (>>>>>>> 2313ce5d6f6d0d1b063e67c572bb022301b3bb2d)
 ### User testing
+We tested with one potential user who gave us critical insights. She commented on whether having a "Done" button is
+necessary and that "Add a todo" can be shortened as "Add" and "Delete Completed" can be shorted as "Delete." Since this
+is an early stage in development, we are still keeping the design as it is, but we will definitely take them into
+consideration. She also mentioned that "Add a todo" and "Delete Completed" buttons should be at the bottom; we agree
+with this and are likely to implement this change as we move onto making this more dynamic.
+
 ### Challenges we faced
-We had a bit of trouble in the beginning with getting used to pulling before doing any work and pushing after completing some tasks.
+We had a bit of trouble in the beginning with getting used to pulling before doing any work and pushing after completing 
+some tasks. We also found it difficult to make these design choices when they are so static; we are excited to move onto
+making these pages and buttons dynamic!
+
 ### Parts of the design we're most proud of
+We feel proud of our color and font choices. The font is light-hearted and encouraging of completing tasks; the maroon
+color is clearly indicative of deleting, but the color is not too alarming or aggressive. The green colors are fitting
+for "Done" and "Add a todo," but easy to distinguish as they have different shades. 
