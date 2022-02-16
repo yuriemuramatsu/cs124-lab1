@@ -12,3 +12,11 @@ const initialData = [
         isDone: true
     }
 ];
+
+function App() {
+    return (
+        <App initialData={initialData}/>
+    );
+}
+
+export default App;
