@@ -8,6 +8,8 @@ function Clock(props){
   </p>
 }
 
+const element = document.getElementById("completion");
+
 const data = [
   {
     id: 512,
@@ -28,7 +30,10 @@ function App() {
   const date = Date();
   return (
       <div className="App">
-        <h1>Test </h1>
+        <h1>Test {element} </h1>
+
+        {/*var check = require("./checkbox.js")*/}
+
         <Clock date={date}/>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
