@@ -1,14 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
 import React from "react";
 
-function Clock(props){
-  return <p>
-    The current time is {props.date}
-  </p>
-}
-
-const element = document.getElementById("completion");
+import Header from './header';
+import DoneButton from "./doneButton";
+import AddButton from "./addButton";
+import DeleteButton from "./deleteButton";
 
 const data = [
   {
@@ -27,30 +23,13 @@ const data = [
 
 
 function App() {
-  const date = Date();
-  return (
-      <div className="App">
-        <h1>Test {element} </h1>
-
-        {/*var check = require("./checkbox.js")*/}
-
-        <Clock date={date}/>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-  );
+  return <>
+    <Header />
+    <DoneButton />
+    <br/>
+    <AddButton />
+    <DeleteButton />
+  </>
 }
 
 export default App;

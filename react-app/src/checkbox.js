@@ -3,7 +3,7 @@ import React from "react";
 // import App from "./src/App";
 import {useState} from "react";
 import './index.js';
-import 'screen1.html';
+import '../screen1.html';
 
 // const element = React.createElement;
 const checkboxButton = document.getElementById("completion");
