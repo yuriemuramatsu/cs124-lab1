@@ -25,28 +25,28 @@ import TextInput from "./textInput";
 
 function App() {
 
-    // const [tasks, setTasks] = useState([]);
-    //
-    // function handleTaskSelected(task) {
-    //     setTasks(task);
-    //     task.parentNode.style.color = (task.checked) ? 'black' : 'red';
-    // }
+    // checked holds all checkboxes that are checked
+    const [checked, setChecked] = useState([]);
 
-    function isChecked(x, y) {
-        (y.checked) ? console.log("working") : console.log("also working");
-        x.style.backgroundColor =  (y.checked) ? 'black' : 'red';
-        // elem.color = (elem.checked) ? 'black' : 'red';
+    function changeColor(y) {
+        // return "blue"
+        // (y.checked) ? console.log("clicked") : console.log("not clicked");
+        // y.backgroundColor =  (y.checked) ? 'blue' : 'yellow';
     }
 
     return <>
         <Header/>
-
         <Checkbox
-            // onTaskSelected={isChecked}
-            parentMethod = {isChecked}
+            // stateChanger changes the status of checkbox
+            stateChanger = {setChecked}
         />
 
-        <TextInput/>
+        <TextInput
+            // colorChange changes the color of input text, depending on value of isChecked
+            colorChanger = {changeColor}
+            isChecked = {checked}
+            thisColor = {changeColor}
+        />
         <DoneButton/>
         <AddButton/>
         <DeleteButton/>
