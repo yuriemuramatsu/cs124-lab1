@@ -26,26 +26,21 @@ import TextInput from "./textInput";
 function App() {
 
     // checked holds all checkboxes that are checked
-    const [checked, setChecked] = useState([]);
+    let [checked, setChecked] = useState(false);
 
-    function changeColor(y) {
-        // return "blue"
-        // (y.checked) ? console.log("clicked") : console.log("not clicked");
-        // y.backgroundColor =  (y.checked) ? 'blue' : 'yellow';
+    function changeColor() {
+        setChecked(true);
+        console.log("changeColor is called")
     }
 
     return <>
         <Header/>
         <Checkbox
-            // stateChanger changes the status of checkbox
-            stateChanger = {setChecked}
+            colorChanger = {changeColor}
         />
 
         <TextInput
-            // colorChange changes the color of input text, depending on value of isChecked
-            colorChanger = {changeColor}
             isChecked = {checked}
-            thisColor = {changeColor}
         />
         <DoneButton/>
         <AddButton/>
