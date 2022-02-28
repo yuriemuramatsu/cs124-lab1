@@ -42,9 +42,10 @@ function App() {
         <TextInput
             isChecked = {checked}
         />
-        <DoneButton/>
-        <AddButton/>
-        <DeleteButton/>
+        <div className="editTasks">
+            <AddButton/>
+            <DeleteButton/>
+        </div>
     </>
 }
 
