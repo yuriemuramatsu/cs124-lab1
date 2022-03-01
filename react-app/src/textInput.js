@@ -12,10 +12,10 @@ function TextInput(props) {
     console.log(props.isChecked)
 
     if (props.isChecked === true){
+        console.log("task2 is called")
         thisId = "task2"
     }
 
-    return <input type="text" name="task1" id = {thisId}
-    />
+    return <input type="text" name="task1" id = {thisId}/>
 }
 export default TextInput;
