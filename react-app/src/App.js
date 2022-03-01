@@ -2,11 +2,9 @@ import './App.css';
 import React, {useState, Component}from "react";
 
 import Header from './header';
-import DoneButton from "./doneButton";
 import AddButton from "./addButton";
 import DeleteButton from "./deleteButton";
-import Checkbox from "./checkbox";
-import TextInput from "./textInput";
+import Task from './task';
 
 // const data = [
 //   {
@@ -25,26 +23,13 @@ import TextInput from "./textInput";
 
 function App() {
 
-    // checked holds all checkboxes that are checked
-    let [checked, setChecked] = useState(false);
-
-    function changeColor() {
-        setChecked(true);
-        console.log("changeColor is called")
-    }
-
     return <>
         <Header/>
-        <Checkbox
-            colorChanger = {changeColor}
-        />
-
-        <TextInput
-            isChecked = {checked}
-        />
-        <DoneButton/>
-        <AddButton/>
-        <DeleteButton/>
+        <Task/>
+        <div className="editTasks">
+            <AddButton/>
+            <DeleteButton/>
+        </div>
     </>
 }
 

@@ -4,9 +4,11 @@ import React from "react";
 function Checkbox(props) {
 
     // change the state of checkbox at App (parent) to true
-    return <input type={"checkbox"}
-                  // onClick={() => props.colorChanger}
-                  onClick={props.colorChanger}
+    return <input
+        className="checkbox"
+        type={"checkbox"}
+        // onClick={() => props.colorChanger}
+        onClick={props.colorChanger}
     />
 }
 
