@@ -24,12 +24,10 @@ function Task(props) {
     <input
         className="checkbox"
         type={"checkbox"}
-        onClick={props.colorChanger}
-        colorChanger = {changeColor}
+        onClick= {e => changeColor()}
     />
     <input
         type="text"
-        name="task1"
         id = {thisId}
         isChecked = {checked}
     />
