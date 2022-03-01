@@ -4,31 +4,41 @@ import React, {useState, Component}from "react";
 import Header from './header';
 import AddButton from "./addButton";
 import DeleteButton from "./deleteButton";
-import Task from './task';
+import TaskList from './taskList';
 
-// const data = [
-//   {
-//     id: 512,
-//     name: "Neil Rhodes",
-//     email: "rhodes@hmc.edu",
-//     phone: "(909) 555-1212"
-//   },
-//   {
-//     id: 787,
-//     name: "Barack Obama",
-//     email: "ex-prez@whitehouse.gov",
-//     phone: "(312) 555-1212"
-//   }
-// ];
+function App(props) {
 
-function App() {
+    const [data, setData] = useState(props.initialData);
+
+    console.log(data)
+
+    function handleItemChanged(itemId, field, newValue){
+        setData(data.map(
+            p => p.id === itemId ? {...p, [field]: newValue} : p))
+    }
+
+    function handleItemDeleted(itemID){
+        setData(data.filter((item) => item.id !== itemID));
+        console.log(data)
+    }
+
+    function handleItemAdded(){
+
+    }
 
     return <>
         <Header/>
-        <Task/>
+        <TaskList
+            onItemChanged = {handleItemChanged}
+        />
         <div className="editTasks">
-            <AddButton/>
-            <DeleteButton/>
+            <AddButton
+                onItemAdded = {handleItemAdded}
+            />
+            <DeleteButton
+                onItemDeleted = {handleItemDeleted}
+                // thisID = {thisID}
+            />
         </div>
     </>
 }

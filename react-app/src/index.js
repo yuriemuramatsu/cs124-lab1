@@ -20,11 +20,10 @@ const initialData = [
     }
 ];
 
-<App initialData={initialData}/>
 
 ReactDOM.render(
     <React.StrictMode>
-        <App/>
+        <App initialData={initialData}/>
     </React.StrictMode>,
     document.getElementById('root')
 );

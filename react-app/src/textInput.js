@@ -11,11 +11,18 @@ function TextInput(props) {
 
     console.log(props.isChecked)
 
-    if (props.isChecked === true){
+    if (props.isChecked === true) {
         console.log("task2 is called")
         thisId = "task2"
     }
 
-    return <input type="text" name="task1" id = {thisId}/>
+    return <input
+        type="text" name="task1" id={thisId}
+        onChange={
+            (e) => props.onItemChanged(props.item.id, props.item.textInput, e.target.value)
+        }
+        // value={props.item[props.item.textInput]}
+    />
 }
+
 export default TextInput;

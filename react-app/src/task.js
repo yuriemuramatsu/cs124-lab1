@@ -7,14 +7,6 @@ function Task(props) {
     // checked holds all checkboxes that are checked
     let [checked, setChecked] = useState(false);
 
-    let thisId = "task1";
-
-    console.log(props.isChecked)
-
-    if (props.isChecked === true) {
-        thisId = "task2"
-    }
-
     function changeColor() {
         setChecked(true);
         console.log("changeColor is called")
@@ -24,7 +16,10 @@ function Task(props) {
         {/*<body className="task">*/}
 
         <Checkbox colorChanger={changeColor}/>
-        <TextInput isChecked = {checked}/>
+        <TextInput
+            isChecked = {checked}
+            onItemChanged = {props.onItemChanged}
+        />
 
         {/*<input*/}
         {/*    className="checkbox"*/}
