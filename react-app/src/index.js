@@ -20,7 +20,6 @@ const initialData = [
     }
 ];
 
-
 ReactDOM.render(
     <React.StrictMode>
         <App initialData={initialData}/>
