@@ -6,38 +6,22 @@ import TextInput from './textInput';
 function Task(props) {
     // checked holds all checkboxes that are checked
     let [checked, setChecked] = useState(false);
-
     let thisId = "task1";
 
-    console.log(props.isChecked)
-
-    if (props.isChecked === true) {
-        thisId = "task2"
-    }
-
     function changeColor() {
-        setChecked(true);
+        setChecked(!checked);
         console.log("changeColor is called")
+        //if (props.isChecked === true) {
+        if (checked) {
+            thisId = "task2"
+        } else {
+            thisId = "task1"
+        }
     }
 
     return <>
-        {/*<body className="task">*/}
-
         <Checkbox colorChanger={changeColor}/>
         <TextInput isChecked = {checked}/>
-
-        {/*<input*/}
-        {/*    className="checkbox"*/}
-        {/*    type={"checkbox"}*/}
-        {/*    onClick= {e => changeColor()}*/}
-        {/*/>*/}
-        {/*<input*/}
-        {/*    type="text"*/}
-        {/*    id = {thisId}*/}
-        {/*    isChecked = {checked}*/}
-        {/*/>*/}
-        {/*}*/}
-
     </>
 }
 export default Task;

@@ -4,7 +4,7 @@ import React, {useState, Component}from "react";
 import Header from './header';
 import AddButton from "./addButton";
 import DeleteButton from "./deleteButton";
-import Task from './task';
+import TaskList from './taskList';
 
 // const data = [
 //   {
@@ -25,7 +25,7 @@ function App() {
 
     return <>
         <Header/>
-        <Task/>
+        <TaskList/>
         <div className="editTasks">
             <AddButton/>
             <DeleteButton/>
