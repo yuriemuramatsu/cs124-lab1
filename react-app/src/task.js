@@ -8,6 +8,7 @@ function Task(props) {
     let [checked, setChecked] = useState(false);
 
     let thisId = "task1";
+    console.log("working")
 
     console.log(props.isChecked)
 
