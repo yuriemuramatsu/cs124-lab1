@@ -6,6 +6,8 @@ function TaskList(props) {
     return <Task
         onItemChanged={props.onItemChanged}
         data = {props.data}
+        completedData = {props.completedData}
+        setCompletedData = {props.setCompletedData}
     />
 }
 

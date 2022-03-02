@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import './task.css';
 import Checkbox from './checkbox';
 import TextInput from './textInput';
+import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 
 function Task(props) {
     // checked holds all checkboxes that are checked
@@ -13,11 +14,18 @@ function Task(props) {
         setChecked(!checked);
         if (checked) {
             thisId = "task2"
+            props.setCompletedData([...props.completedData,
+                {
+                    id: "",
+                    isChecked: true,
+                    textInput: "",
+                    isDone: true
+                }]);
         } else {
             thisId = "task1"
         }
     }
-    
+
     return <table>
         <tbody>
         {
