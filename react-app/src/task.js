@@ -54,6 +54,7 @@ function Task(props) {
             // onItemChanged={props.onItemChanged}
             textData={props.data.textInput}
             thisId = {thisId}
+
         />
         <br/>
     </>

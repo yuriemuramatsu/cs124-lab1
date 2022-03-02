@@ -15,18 +15,20 @@ function TextInput(props) {
         thisId = "task2"
     }
 
+    console.log(props)
+
     return <>
         <input
             type="text" name="task2" id={props.thisId}
             value={props.textData}
-            onChange = {
-                (e) => props.onItemChanged
-            }
+            // onChange = {
+            //     (e) => props.onItemChanged
+            // }
             // value={props.item[props.item.textInput]}
 
-            // onChange={
-            //     (e) => props.onItemChanged(props.item.id, props.item.textInput, e.target.value)
-            // }
+            onChange={
+                (e) => props.onItemChanged(props.thisId, props.item.textInput, e.target.value)
+            }
         />
     </>
 }
