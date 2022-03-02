@@ -1,0 +1,30 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 400pt;
+    right: 300pt;
+    width: 300pt;
+    height: 400pt;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.modal {
+    background-color: #fff;
+    border-radius: 5pt;
+    border-color: black;
+    border-style: solid;
+    margin: 0 auto;
+    top: 50pt;
+    height: 100pt;
+    width: 200pt;
+    padding: 10pt;
+    position: relative;
+}
+
+.alert-buttons {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    right: 0;
+}

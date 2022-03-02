@@ -6,12 +6,15 @@ import AddButton from "./addButton";
 import DeleteButton from "./deleteButton";
 import TaskList from './taskList';
 import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
+import Alert from "./Alert";
 
 function App(props) {
 
     const [data, setData] = useState(props.initialData);
 
     const [completedTaskList, setCompletedTaskList] = useState([]);
+
+    const [showAlert, setShowAlert] = useState(false);
 
     console.log(data)
 
@@ -36,10 +39,20 @@ function App(props) {
             }])
     }
 
+    function alertDelete() {
+        console.log("pressed delete")
+        handleItemDeleted()
+    }
+
+    function toggleModal() {
+        setShowAlert(!showAlert);
+    }
+
     return <>
         <Header/>
         <TaskList
             data = {data}
+            completedData = {completedTaskList}
             onItemChanged = {handleItemChanged}
         />
         <div className="editTasks">
@@ -48,8 +61,15 @@ function App(props) {
             />
             {completedTaskList.length > 0 &&
             <DeleteButton
-                onItemDeleted={handleItemDeleted}
+                onItemDeleted={toggleModal}
             />}
+        </div>
+        <div>
+            {showAlert && <Alert onClose={toggleModal} onOK={alertDelete}>
+                <div>
+                    Are you sure you want to delete completed tasks?
+                </div>
+            </Alert>}
         </div>
     </>
 }
