@@ -55,25 +55,17 @@ function Task(props) {
         }
     }
 
-    return <table>
-        <tbody>
-        {
-            props.data.map(data => {
-                return <>
-                    <Checkbox
-                        colorChanger={changeColor}
-                    />
-                    <TextInput
-                        isChecked={data.isChecked}
-                        // onItemChanged={props.onItemChanged}
-                        textData={data.textInput}
-                    />
-                    <br/>
-                </>
-            })
-        }
-        </tbody>
-    </table>
+    return <>
+        <Checkbox
+            colorChanger={changeColor}
+        />
+        <TextInput
+            isChecked={props.data.isChecked}
+            // onItemChanged={props.onItemChanged}
+            textData={props.data.textInput}
+        />
+        <br/>
+    </>
 }
 
 export default Task;
