@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState, Component}from "react";
+import React, {useState, Component} from "react";
 
 import Header from './header';
 import AddButton from "./addButton";
@@ -15,8 +15,6 @@ function App(props) {
     const [completedTaskList, setCompletedTaskList] = useState([]);
 
     const [showAlert, setShowAlert] = useState(false);
-
-    // console.log(data)
 
     function handleItemChanged(itemId, field, newValue) {
         setData(data.map(
@@ -51,20 +49,20 @@ function App(props) {
     return <>
         <Header/>
         <TaskList
-            data = {data}
-            setData = {setData}
-            completedData = {completedTaskList}
-            setCompletedData = {setCompletedTaskList}
-            onItemChanged = {handleItemChanged}
+            data={data}
+            setData={setData}
+            completedData={completedTaskList}
+            setCompletedData={setCompletedTaskList}
+            onItemChanged={handleItemChanged}
         />
         <div className="editTasks">
             <AddButton
                 onItemAdded={handleItemAdded}
             />
             {completedTaskList.length > 0 &&
-            <DeleteButton
-                onItemDeleted={toggleModal}
-            />}
+                <DeleteButton
+                    onItemDeleted={toggleModal}
+                />}
         </div>
         <div>
             {showAlert && <Alert onClose={toggleModal} onOK={alertDelete}>

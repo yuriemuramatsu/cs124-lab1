@@ -17,7 +17,7 @@ function TextInput(props) {
 
     return <>
         <input
-            type="text" name="task2" id={thisId}
+            type="text" name="task2" id={props.thisId}
             value={props.textData}
             onChange = {
                 (e) => props.onItemChanged

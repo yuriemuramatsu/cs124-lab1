@@ -11,28 +11,24 @@ function Task(props) {
     let thisId = "task1";
 
     function changeColor() {
-        console.log(checked)
         setChecked(!checked);
-        console.log(checked)
 
-        props.setData(
-            props.data.map(d => {
-                return {...d, isChecked: true};
-            })
-        )
+        // props.setData(
+        //     props.data.map(d => {
+        //         return {...d, isChecked: true};
+        //     })
+        // )
 
-        console.log(props.data)
-        console.log(props.completedData)
-
-        let thisList = [...props.completedData,
-            {
-                id: props.id,
-                isChecked: true,
-                textInput: props.textInput,
-                isDone: true
-            }];
+        // let thisList = [...props.completedData,
+        //     {
+        //         id: props.id,
+        //         isChecked: true,
+        //         textInput: props.textInput,
+        //         isDone: true
+        //     }];
 
         if (checked) {
+            console.log("checked has been called")
             thisId = "task2"
             props.setCompletedData([...props.completedData,
                 {
@@ -42,16 +38,10 @@ function Task(props) {
                     isDone: true
                 }]);
 
-            console.log(props.data)
-            console.log(props.completedData)
-
         } else {
             thisId = "task1"
-            props.setCompletedData(props.data.filter((item => !props.completedData.includes(item.id))))
-            props.setData(props.data.filter((item => !props.completedData.includes(item.id))))
-
-            console.log(props.data)
-            console.log(props.completedData)
+            // props.setCompletedData(props.data.filter((item => !props.completedData.includes(item.id))))
+            // props.setData(props.data.filter((item => !props.completedData.includes(item.id))))
         }
     }
 
@@ -63,6 +53,7 @@ function Task(props) {
             isChecked={props.data.isChecked}
             // onItemChanged={props.onItemChanged}
             textData={props.data.textInput}
+            thisId = {thisId}
         />
         <br/>
     </>
