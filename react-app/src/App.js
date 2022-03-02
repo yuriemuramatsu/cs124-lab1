@@ -53,6 +53,7 @@ function App(props) {
         <TaskList
             data = {data}
             completedData = {completedTaskList}
+            setCompletedData = {setCompletedTaskList}
             onItemChanged = {handleItemChanged}
         />
         <div className="editTasks">
