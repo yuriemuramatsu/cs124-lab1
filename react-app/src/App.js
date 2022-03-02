@@ -52,6 +52,7 @@ function App(props) {
         <Header/>
         <TaskList
             data = {data}
+            setData = {setData}
             completedData = {completedTaskList}
             setCompletedData = {setCompletedTaskList}
             onItemChanged = {handleItemChanged}

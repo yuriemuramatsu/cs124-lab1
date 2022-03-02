@@ -12,17 +12,33 @@ function Task(props) {
 
     function changeColor() {
         setChecked(!checked);
+
+        props.setData(
+            props.data.map(d => {
+                return {...d, isChecked: true};
+            })
+        )
+
         if (checked) {
             thisId = "task2"
+            props.setData([...props.data,
+                {
+                    id: props.id,
+                    isChecked: true,
+                    textInput: props.textInput,
+                    isDone: true
+                }]
+            )
             props.setCompletedData([...props.completedData,
                 {
-                    id: "",
+                    id: props.id,
                     isChecked: true,
-                    textInput: "",
+                    textInput: props.textInput,
                     isDone: true
                 }]);
         } else {
             thisId = "task1"
+            props.setCompletedData(props.data.filter((item => !props.completedData.includes(item.id))))
         }
     }
 
@@ -33,7 +49,7 @@ function Task(props) {
                 return <>
                     <Checkbox colorChanger={changeColor}/>
                     <TextInput
-                        isChecked={checked}
+                        isChecked={data.isChecked}
                         // onItemChanged={props.onItemChanged}
                         textData={data.textInput}
                     />

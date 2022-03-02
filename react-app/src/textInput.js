@@ -17,18 +17,16 @@ function TextInput(props) {
 
     return <>
         <input
-            type="text" name="task1" id={thisId}
-            // onChange={
-            //     (e) => props.onItemChanged(props.item.id, props.item.textInput, e.target.value)
-            // }
-            // value={props.item[props.item.textInput]}
-        />
-
-        <input
-            type="text" name="task2"　value={props.textData}
+            type="text" name="task2" id={thisId}
+            value={props.textData}
             onChange = {
                 (e) => props.onItemChanged
             }
+            // value={props.item[props.item.textInput]}
+
+            // onChange={
+            //     (e) => props.onItemChanged(props.item.id, props.item.textInput, e.target.value)
+            // }
         />
     </>
 }

@@ -14,9 +14,9 @@ const initialData = [
     },
     {
         id: "787",
-        isChecked: true,
+        isChecked: false,
         textInput: "Take trash out",
-        isDone: true
+        isDone: false
     }
 ];
 
