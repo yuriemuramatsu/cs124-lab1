@@ -5,7 +5,7 @@ function TaskList(props) {
 
     return <Task
         onItemChanged={props.onItemChanged}
-        data = {props.data[0]}
+        data = {props.data}
     />
 }
 

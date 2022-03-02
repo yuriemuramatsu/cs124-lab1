@@ -17,15 +17,23 @@ function Task(props) {
             thisId = "task1"
         }
     }
-
-    return <>
-        <Checkbox colorChanger={changeColor}/>
-        <TextInput
-            isChecked={checked}
-            onItemChanged={props.onItemChanged}
-            textData = {props.data.textInput}
-        />
-    </>
+    
+    return <table>
+        <tbody>
+        {
+            props.data.map(data => {
+                return <>
+                    <Checkbox colorChanger={changeColor}/>
+                    <TextInput
+                        isChecked={checked}
+                        // onItemChanged={props.onItemChanged}
+                        textData={data.textInput}
+                    />
+                </>
+            })
+        }
+        </tbody>
+    </table>
 }
 
 export default Task;
