@@ -63,7 +63,7 @@ function App(props) {
             />
             {completedTaskList.length > 0 &&
             <DeleteButton
-                onItemDeleted={toggleModal}
+                onItemDeleted={handleItemDeleted}
             />}
         </div>
         <div>

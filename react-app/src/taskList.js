@@ -10,14 +10,13 @@ function TaskList(props) {
             props.data.map(data => {
                 return <>
                     <Task
-                        onItemChanged={data.onItemChanged}
-                        data = {data}
-                        setData = {props.setData}
-                        completedData = {props.completedData}
-                        setCompletedData = {props.setCompletedData}
+                        onItemChanged={props.onItemChanged}
+                        data={data}
+                        setData={props.setData}
+                        completedData={props.completedData}
+                        setCompletedData={props.setCompletedData}
 
                     />
-                    <br/>
                 </>
             })
         }
@@ -25,3 +24,11 @@ function TaskList(props) {
 }
 
 export default TaskList;
+
+// <TaskList
+//     data = {data}
+//     setData = {setData}
+//     completedData = {completedTaskList}
+//     setCompletedData = {setCompletedTaskList}
+//     onItemChanged = {handleItemChanged}
+// />
