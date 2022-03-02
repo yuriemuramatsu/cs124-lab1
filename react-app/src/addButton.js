@@ -3,11 +3,14 @@ import React from 'react';
 
 function AddButton(props) {
     return <body>
-    <form action="process.html" method="POST">
-        <input type="submit" id = "add" value = "Add a todo"
-               onClick={props.colorChanger}
-        />
-    </form>
+        {/*<input type="submit"*/}
+        {/*       id = "add"*/}
+        {/*       value = "Add a todo"*/}
+        {/*       onClick={props.onItemAdded}*/}
+        {/*/>*/}
+        <button type={"button"} id = "add" onClick={props.onItemAdded}>
+            Add
+        </button>
     </body>
 }
 
