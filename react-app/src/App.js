@@ -16,7 +16,7 @@ function App(props) {
 
     const [showAlert, setShowAlert] = useState(false);
 
-    console.log(data)
+    // console.log(data)
 
     function handleItemChanged(itemId, field, newValue) {
         setData(data.map(

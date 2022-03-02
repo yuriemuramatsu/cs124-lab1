@@ -11,7 +11,9 @@ function Task(props) {
     let thisId = "task1";
 
     function changeColor() {
+        console.log(checked)
         setChecked(!checked);
+        console.log(checked)
 
         props.setData(
             props.data.map(d => {
@@ -19,16 +21,19 @@ function Task(props) {
             })
         )
 
+        console.log(props.data)
+        console.log(props.completedData)
+
+        let thisList = [...props.completedData,
+            {
+                id: props.id,
+                isChecked: true,
+                textInput: props.textInput,
+                isDone: true
+            }];
+
         if (checked) {
             thisId = "task2"
-            props.setData([...props.data,
-                {
-                    id: props.id,
-                    isChecked: true,
-                    textInput: props.textInput,
-                    isDone: true
-                }]
-            )
             props.setCompletedData([...props.completedData,
                 {
                     id: props.id,
@@ -36,9 +41,17 @@ function Task(props) {
                     textInput: props.textInput,
                     isDone: true
                 }]);
+
+            console.log(props.data)
+            console.log(props.completedData)
+
         } else {
             thisId = "task1"
             props.setCompletedData(props.data.filter((item => !props.completedData.includes(item.id))))
+            props.setData(props.data.filter((item => !props.completedData.includes(item.id))))
+
+            console.log(props.data)
+            console.log(props.completedData)
         }
     }
 
@@ -47,12 +60,15 @@ function Task(props) {
         {
             props.data.map(data => {
                 return <>
-                    <Checkbox colorChanger={changeColor}/>
+                    <Checkbox
+                        colorChanger={changeColor}
+                    />
                     <TextInput
                         isChecked={data.isChecked}
                         // onItemChanged={props.onItemChanged}
                         textData={data.textInput}
                     />
+                    <br/>
                 </>
             })
         }
