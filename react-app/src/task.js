@@ -26,14 +26,10 @@ function Task(props) {
                 }]);
 
         } else {
-<<<<<<< HEAD
             colorId = "task1"
             // props.setCompletedData(props.data.filter((item => !props.completedData.includes(item.id))))
             // props.setData(props.data.filter((item => !props.completedData.includes(item.id))))
-=======
-            thisId = "task1";
             props.setCompletedData(props.completedData.filter((item => item != inputId)))
->>>>>>> 4945f047a53d119dec6cb951abf16d6cb4eb4d60
         }
     }
 
