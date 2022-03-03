@@ -8,7 +8,7 @@ function Task(props) {
     // checked holds all checkboxes that are checked
     let [checked, setChecked] = useState(false);
 
-    let thisId = "task1";
+    let colorId = "task1";
 
     function changeColor() {
         setChecked(!checked);
@@ -29,7 +29,7 @@ function Task(props) {
 
         if (checked) {
             console.log("checked has been called")
-            thisId = "task2"
+            colorId = "task2"
             props.setCompletedData([...props.completedData,
                 {
                     id: props.id,
@@ -39,7 +39,7 @@ function Task(props) {
                 }]);
 
         } else {
-            thisId = "task1"
+            colorId = "task1"
             // props.setCompletedData(props.data.filter((item => !props.completedData.includes(item.id))))
             // props.setData(props.data.filter((item => !props.completedData.includes(item.id))))
         }
@@ -53,7 +53,9 @@ function Task(props) {
             isChecked={props.data.isChecked}
             // onItemChanged={props.onItemChanged}
             textData={props.data.textInput}
-            thisId = {thisId}
+            colorId = {colorId}
+            taskId = {props.data.id}
+            onItemChanged={props.onItemChanged}
 
         />
         <br/>

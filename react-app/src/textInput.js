@@ -7,27 +7,23 @@ function TextInput(props) {
     // read the checked status from App (parent) and if true, then call App's changeColor, which
     // will turn the color of this textInput
 
-    let thisId = "task1";
+    // let thisId = "task1";
 
     console.log("isChecked: " + props.isChecked)
 
-    if (props.isChecked === true) {
-        thisId = "task2"
-    }
+    // if (props.isChecked === true) {
+    //     thisId = "task2"
+    // }
 
-    console.log(props)
+    // console.log(props)
 
     return <>
         <input
-            type="text" name="task2" id={props.thisId}
+            type="text" name="task2" id={props.colorId}
             value={props.textData}
-            // onChange = {
-            //     (e) => props.onItemChanged
-            // }
-            // value={props.item[props.item.textInput]}
-
             onChange={
-                (e) => props.onItemChanged(props.thisId, props.item.textInput, e.target.value)
+                (e) =>
+                    props.onItemChanged(props.taskId, props.textData, e.target.value)
             }
         />
     </>
