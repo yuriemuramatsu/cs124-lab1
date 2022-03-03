@@ -30,7 +30,6 @@ function App(props) {
     }
 
     function handleCompletedDeleted() {
-        setData(data.filter((item) => !completedTaskList.includes(item.id)));
         setCompletedTaskList([]);
         console.log(data)
     }
@@ -41,7 +40,7 @@ function App(props) {
                 id: generateUniqueID(),
                 isChecked: false,
                 textInput: "",
-                isDone: false
+                blur: false
             }])
     }
 
