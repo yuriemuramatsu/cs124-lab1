@@ -10,38 +10,24 @@ function Task(props) {
 
     let thisId = "task1";
 
-    function changeColor() {
+    function changeColor(inputId) {
         setChecked(!checked);
-
-        // props.setData(
-        //     props.data.map(d => {
-        //         return {...d, isChecked: true};
-        //     })
-        // )
-
-        // let thisList = [...props.completedData,
-        //     {
-        //         id: props.id,
-        //         isChecked: true,
-        //         textInput: props.textInput,
-        //         isDone: true
-        //     }];
+        console.log(checked);
 
         if (checked) {
             console.log("checked has been called")
             thisId = "task2"
             props.setCompletedData([...props.completedData,
                 {
-                    id: props.id,
+                    id: inputId,
                     isChecked: true,
                     textInput: props.textInput,
                     isDone: true
                 }]);
 
         } else {
-            thisId = "task1"
-            // props.setCompletedData(props.data.filter((item => !props.completedData.includes(item.id))))
-            // props.setData(props.data.filter((item => !props.completedData.includes(item.id))))
+            thisId = "task1";
+            props.setCompletedData(props.completedData.filter((item => item != inputId)))
         }
     }
 
