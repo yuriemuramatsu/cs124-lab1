@@ -9,7 +9,7 @@ import Alert from "./Alert";
 
 function App(props) {
 
-    const [data, setData] = useState(props.initialData);
+    const [todo, setTodo] = useState(props.initialData);
 
     const [completedTaskList, setCompletedTaskList] = useState([]);
 
@@ -18,25 +18,25 @@ function App(props) {
     let newData = []
 
     function handleItemChanged(itemId, field, newValue) {
-        console.log(data)
+        console.log(todo)
 
-        newData = data.map(
+        newData = todo.map(
             p => p.id === itemId ? {...p, [field]: newValue} : p)
         console.log(newData)
-        console.log(data)
-        setData([...newData])
+        console.log(todo)
+        setTodo([...newData])
         console.log(newData)
-        console.log(data)
+        console.log(todo)
     }
 
     function handleCompletedDeleted() {
-        setData(data.filter((item) => !completedTaskList.includes(item.id)));
+        setTodo(todo.filter((item) => !completedTaskList.includes(item.id)));
         setCompletedTaskList([]);
-        console.log(data)
+        console.log(todo)
     }
 
     function handleItemAdded() {
-        setData([...data,
+        setTodo([...todo,
             {
                 id: generateUniqueID(),
                 isChecked: false,
@@ -57,7 +57,7 @@ function App(props) {
     return <>
         <h1>To Do List</h1>
         <TaskList
-            data={data}
+            todo={todo}
             completedData={completedTaskList}
             setCompletedData={setCompletedTaskList}
             onItemChanged={handleItemChanged}
