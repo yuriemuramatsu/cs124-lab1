@@ -3,21 +3,27 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 
 const initialData = [
     {
-        id: 1276,
+        id: generateUniqueID(),
         isChecked: false,
         textInput: "Buy Book",
         blur: false
     },
     {
-        id: 787,
+        id: generateUniqueID,
         isChecked: false,
         textInput: "Take trash out",
         blur: false
-    }
+    },
+    {
+        id: generateUniqueID,
+        isChecked: false,
+        textInput: "Super Super Super Super Super Super SuperSuper long",
+        blur: false
+    },
 ];
 
 ReactDOM.render(
