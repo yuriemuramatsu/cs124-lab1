@@ -8,7 +8,9 @@ function Task(props) {
     let [checked, setChecked] = useState(false); //why
 
     function toggleCheckbox() {
-        setChecked(!checked);
+        console.log(checked)
+
+        console.log(props.completedData)
         if (!props.completedData.includes(props.item)) {
             console.log("checked")
             props.setCompletedData([...props.completedData,
@@ -18,20 +20,22 @@ function Task(props) {
                     textInput: props.item.textInput,
                     blur: true
                 }]);
-            //props.setData(props.data.filter(element => element != props.item.id))
-            props.setTodo([...props.todo].splice(props.element, 1));
-            console.log([...props.completedData,
-                {
-                    id: props.item.id,
-                    isChecked: true,
-                    textInput: props.item.textInput,
-                    blur: true
-                }])
+            props.setTodo(props.todo.filter(element => element.id != props.item.id))
+            // props.setTodo([...props.todo].splice(props.element, 1));
+
         } else {
             console.log(checked)
-            props.setCompletedData([...props.completedData].splice(props.element, 1));
-            console.log([...props.completedData].splice(props.element, 1))
+            props.setCompletedData(props.completedData.filter(element => element.id != props.item.id));
+            props.setData([...props.data,
+                {
+                    id: props.item.id,
+                    isChecked: false,
+                    textInput: props.item.textInput,
+                    blur: false
+                }]);
+            // console.log([...props.completedData].splice(props.element, 1))
         }
+        setChecked(!checked);
 
         // if (!checked) {
         //     console.log("checked has been called")
