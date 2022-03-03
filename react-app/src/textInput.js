@@ -23,7 +23,7 @@ function TextInput(props) {
             value={props.textData}
             onChange={
                 (e) =>
-                    props.onItemChanged(props.taskId, props.textData, e.target.value)
+                    props.onItemChanged(props.taskId, "textInput", e.target.value)
             }
         />
     </>

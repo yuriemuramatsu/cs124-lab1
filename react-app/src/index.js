@@ -7,13 +7,13 @@ import reportWebVitals from './reportWebVitals';
 
 const initialData = [
     {
-        id: "1276",
+        id: 1276,
         isChecked: false,
         textInput: "Buy Book",
         isDone: false
     },
     {
-        id: "787",
+        id: 787,
         isChecked: false,
         textInput: "Take trash out",
         isDone: false

@@ -16,9 +16,17 @@ function App(props) {
 
     const [showAlert, setShowAlert] = useState(false);
 
+    let newData = []
     function handleItemChanged(itemId, field, newValue) {
-        setData(data.map(
-            p => p.id === itemId ? {...p, [field]: newValue} : p))
+        console.log(data)
+
+        newData = data.map(
+            p => p.id === itemId ? {...p, [field]: newValue} : p)
+        console.log(newData)
+        console.log(data)
+        setData([...newData])
+        console.log(newData)
+        console.log(data)
     }
 
     function handleItemDeleted() {
