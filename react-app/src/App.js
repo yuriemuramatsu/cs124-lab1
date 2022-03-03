@@ -58,6 +58,7 @@ function App(props) {
         <h1>To Do List</h1>
         <TaskList
             todo={todo}
+            setTodo={setTodo}
             completedData={completedTaskList}
             setCompletedData={setCompletedTaskList}
             onItemChanged={handleItemChanged}
