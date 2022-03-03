@@ -60,9 +60,6 @@ function App(props) {
                 onItemAdded={handleItemAdded}
             />
             {completedTaskList.length > 0 &&
-                <DeleteButton
-                    onItemDeleted={toggleModal}
-                />}
             <DeleteButton
                 onItemDeleted={handleItemDeleted}
             />}
