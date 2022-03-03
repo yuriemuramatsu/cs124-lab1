@@ -10,7 +10,7 @@ function Task(props) {
     let colorId = "task1";
 
     function toggleCheckbox() {
-        props.setCompletedData(!props.completedData)
+        //props.setCompletedData(!props.completedData)
         console.log(checked)
         setChecked(!checked);
         console.log(checked)
