@@ -26,13 +26,7 @@ function Task(props) {
                         textInput: props.item.textInput,
                         blur: true
                     }]);
-                console.log([...props.completedData,
-                    {
-                        id: props.item.id,
-                        isChecked: true,
-                        textInput: props.item.textInput,
-                        blur: true
-                    }])
+                props.setData(props.data.filter(element => element != props.item.id))
             }
 
         } else {

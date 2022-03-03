@@ -10,6 +10,7 @@ function TaskList(props) {
                     <Task
                         onItemChanged={props.onItemChanged}
                         item={singleTask}
+                        data={props.data}
                         completedData={props.completedData}
                         setCompletedData={props.setCompletedData}
                     />
