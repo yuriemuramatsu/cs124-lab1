@@ -7,12 +7,10 @@ function Task(props) {
     // checked holds all checkboxes that are checked
     let [checked, setChecked] = useState(false); //why
 
-    let colorId = "task1";
-
     function toggleCheckbox() {
-        //props.setCompletedData(!props.completedData)
-
+        setChecked(!checked);
         if (!props.completedData.includes(props.item)) {
+            console.log("checked")
             props.setCompletedData([...props.completedData,
                 {
                     id: props.item.id,
@@ -22,8 +20,17 @@ function Task(props) {
                 }]);
             //props.setData(props.data.filter(element => element != props.item.id))
             props.setTodo([...props.todo].splice(props.element, 1));
+            console.log([...props.completedData,
+                {
+                    id: props.item.id,
+                    isChecked: true,
+                    textInput: props.item.textInput,
+                    blur: true
+                }])
         } else {
+            console.log(checked)
             props.setCompletedData([...props.completedData].splice(props.element, 1));
+            console.log([...props.completedData].splice(props.element, 1))
         }
 
         // if (!checked) {
@@ -50,7 +57,6 @@ function Task(props) {
         //         console.log(newCompletedData);
         //     }
         // }
-        setChecked(c => !c);
     }
 
     return <>
