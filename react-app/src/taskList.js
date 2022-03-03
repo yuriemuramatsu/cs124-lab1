@@ -4,13 +4,13 @@ import Task from './task'
 function TaskList(props) {
 
     return <>
-        {props.data.length > 0 && (
-            props.data.map(singleTask => {
+        {props.todo.length > 0 && (
+            props.todo.map(singleTask => {
                 return <>
                     <Task
                         onItemChanged={props.onItemChanged}
                         item={singleTask}
-                        data={props.data}
+                        data={props.todo}
                         completedData={props.completedData}
                         setCompletedData={props.setCompletedData}
                     />
