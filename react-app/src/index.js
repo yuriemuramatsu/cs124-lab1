@@ -10,13 +10,13 @@ const initialData = [
         id: 1276,
         isChecked: false,
         textInput: "Buy Book",
-        isDone: false
+        blur: false
     },
     {
         id: 787,
         isChecked: false,
         textInput: "Take trash out",
-        isDone: false
+        blur: false
     }
 ];
 
