@@ -7,7 +7,8 @@ function Checkbox(props) {
     return <input
         className="checkbox"
         type={"checkbox"}
-        onClick={props.colorChanger}
+        onChange={props.toggleCheck}
+        checked={props.checkedBox}
     />
 }
 

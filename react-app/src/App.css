@@ -10,13 +10,17 @@
 .editTasks {
   display:flex;
   flex-direction:row;
-  padding-top: 5px;
+  padding-top: 10px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+h1 {
+  font-family: "Lucida Console", "Courier New", monospace;
 }
 
 .App-header {

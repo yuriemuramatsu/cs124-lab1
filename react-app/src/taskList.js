@@ -1,24 +1,21 @@
 import React, {useState} from "react";
 import Task from './task'
-import Checkbox from "./checkbox";
-import TextInput from "./textInput";
 
 function TaskList(props) {
 
     return <>
-        {
-            props.data.map(data => {
+        {props.data.length > 0 && (
+            props.data.map(singleTask => {
                 return <>
                     <Task
                         onItemChanged={props.onItemChanged}
-                        data={data}
-                        setData={props.setData}
+                        item={singleTask}
                         completedData={props.completedData}
                         setCompletedData={props.setCompletedData}
-
                     />
                 </>
             })
+        )
         }
     </>
 }

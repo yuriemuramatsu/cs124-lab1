@@ -2,7 +2,7 @@ import './addButton.css'
 import React from 'react';
 
 function AddButton(props) {
-    return <body>
+    return <>
         {/*<input type="submit"*/}
         {/*       id = "add"*/}
         {/*       value = "Add a todo"*/}
@@ -11,7 +11,7 @@ function AddButton(props) {
         <button type={"button"} id = "add" onClick={props.onItemAdded}>
             Add
         </button>
-    </body>
+    </>
 }
 
 export default AddButton;

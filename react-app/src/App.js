@@ -1,7 +1,6 @@
 import './App.css';
-import React, {useState, Component} from "react";
+import React, {useState} from "react";
 
-import Header from './header';
 import AddButton from "./addButton";
 import DeleteButton from "./deleteButton";
 import TaskList from './taskList';
@@ -17,6 +16,7 @@ function App(props) {
     const [showAlert, setShowAlert] = useState(false);
 
     let newData = []
+
     function handleItemChanged(itemId, field, newValue) {
         console.log(data)
 
@@ -29,7 +29,7 @@ function App(props) {
         console.log(data)
     }
 
-    function handleItemDeleted() {
+    function handleCompletedDeleted() {
         setData(data.filter((item) => !completedTaskList.includes(item.id)));
         setCompletedTaskList([]);
         console.log(data)
@@ -47,7 +47,7 @@ function App(props) {
 
     function alertDelete() {
         console.log("pressed delete")
-        handleItemDeleted()
+        handleCompletedDeleted()
     }
 
     function toggleModal() {
@@ -55,22 +55,27 @@ function App(props) {
     }
 
     return <>
-        <Header/>
+        <h1>To Do List</h1>
         <TaskList
             data={data}
-            setData={setData}
             completedData={completedTaskList}
             setCompletedData={setCompletedTaskList}
             onItemChanged={handleItemChanged}
+        />
+        <h4>Completed</h4>
+        <TaskList
+            data={completedTaskList}
+            // completedData={completedTaskList}
+            // setCompletedData={setCompletedTaskList}
+            // onItemChanged={handleItemChanged}
         />
         <div className="editTasks">
             <AddButton
                 onItemAdded={handleItemAdded}
             />
-            {completedTaskList.length > 0 &&
             <DeleteButton
-                onItemDeleted={handleItemDeleted}
-            />}
+                onItemDeleted={handleCompletedDeleted}
+            />
         </div>
         <div>
             {showAlert && <Alert onClose={toggleModal} onOK={alertDelete}>

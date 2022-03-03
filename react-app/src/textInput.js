@@ -9,13 +9,14 @@ function TextInput(props) {
 
     // let thisId = "task1";
 
-    console.log("isChecked: " + props.isChecked)
+    //console.log("isChecked: " + props.isChecked)
 
     // if (props.isChecked === true) {
     //     thisId = "task2"
     // }
 
     // console.log(props)
+    console.log(props.colorId)
 
     return <>
         <input
