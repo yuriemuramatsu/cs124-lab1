@@ -29,6 +29,10 @@ function App(props) {
 
     }
 
+    function moveTasks(itemId) {
+
+    }
+
     function handleCompletedDeleted() {
         // setTodo(todo.filter((item) => item.isChecked));
         setCompletedList([]);
@@ -36,7 +40,7 @@ function App(props) {
     }
 
     function handleItemAdded() {
-        setTodo([...todo,
+        setUnCompletedList([...unCompletedList,
             {
                 id: generateUniqueID(),
                 isChecked: false,
