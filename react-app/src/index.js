@@ -24,6 +24,12 @@ const initialData = [
         textInput: "Super Super Super Super Super Super SuperSuper long",
         blur: false
     },
+    {
+        id: generateUniqueID,
+        isChecked: true,
+        textInput: "Do something",
+        blur: true
+    },
 ];
 
 ReactDOM.render(

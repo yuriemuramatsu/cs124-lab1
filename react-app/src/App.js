@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 import AddButton from "./addButton";
 import DeleteButton from "./deleteButton";
@@ -11,8 +11,6 @@ function App(props) {
 
     const [todo, setTodo] = useState(props.initialData);
 
-    const [completedTaskList, setCompletedTaskList] = useState([]);
-
     const [showAlert, setShowAlert] = useState(false);
 
     function handleItemChanged(itemId, field, newValue) {
@@ -23,11 +21,13 @@ function App(props) {
         setTodo(newData)
         console.log(newData)
         console.log(todo)
+        // setCompletedList(todo.filter(item => item.isChecked))
+        // setUnCompletedList(todo.filter(item => !item.isChecked))
+
     }
 
     function handleCompletedDeleted() {
-        setTodo(todo.filter((item) => !completedTaskList.includes(item.id)));
-        setCompletedTaskList([]);
+        setTodo(todo.filter((item) => item.isChecked));
         console.log(todo)
     }
 
@@ -54,17 +54,17 @@ function App(props) {
         <h1>To Do List</h1>
         <TaskList
             todo={todo}
-            setTodo={setTodo}
-            completedData={completedTaskList}
-            setCompletedData={setCompletedTaskList}
+            // setTodo={setTodo}
             onItemChanged={handleItemChanged}
+            isCompletedList={false}
         />
         <h4>Completed</h4>
         <TaskList
-            todo={completedTaskList}
+            todo={todo}
+            isCompletedList={true}
             // completedData={completedTaskList}
             // setCompletedData={setCompletedTaskList}
-            // onItemChanged={handleItemChanged}
+            onItemChanged={handleItemChanged}
         />
         <div className="editTasks">
             <AddButton
