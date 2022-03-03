@@ -11,6 +11,9 @@ function App(props) {
 
     const [todo, setTodo] = useState(props.initialData);
 
+    const [completedList, setCompletedList] = useState(todo.filter(item => item.isChecked));
+    const [unCompletedList, setUnCompletedList] = useState(todo.filter(item => !item.isChecked));
+
     const [showAlert, setShowAlert] = useState(false);
 
     function handleItemChanged(itemId, field, newValue) {
@@ -21,14 +24,15 @@ function App(props) {
         setTodo(newData)
         console.log(newData)
         console.log(todo)
-        // setCompletedList(todo.filter(item => item.isChecked))
-        // setUnCompletedList(todo.filter(item => !item.isChecked))
+        setCompletedList(todo.filter(item => item.isChecked))
+        setUnCompletedList(todo.filter(item => !item.isChecked))
 
     }
 
     function handleCompletedDeleted() {
-        setTodo(todo.filter((item) => item.isChecked));
-        console.log(todo)
+        // setTodo(todo.filter((item) => item.isChecked));
+        setCompletedList([]);
+        // console.log(todo)
     }
 
     function handleItemAdded() {
@@ -37,7 +41,7 @@ function App(props) {
                 id: generateUniqueID(),
                 isChecked: false,
                 textInput: "",
-                blur: false
+                isBlur: false
             }])
     }
 
@@ -55,6 +59,10 @@ function App(props) {
         <TaskList
             todo={todo}
             // setTodo={setTodo}
+            completedList={completedList}
+            uncompletedList={unCompletedList}
+            setCompletedList={setCompletedList}
+            setUncompletedList={setUnCompletedList}
             onItemChanged={handleItemChanged}
             isCompletedList={false}
         />
@@ -64,6 +72,10 @@ function App(props) {
             isCompletedList={true}
             // completedData={completedTaskList}
             // setCompletedData={setCompletedTaskList}
+            completedList={completedList}
+            uncompletedList={unCompletedList}
+            setCompletedList={setCompletedList}
+            setUncompletedList={setUnCompletedList}
             onItemChanged={handleItemChanged}
         />
         <div className="editTasks">

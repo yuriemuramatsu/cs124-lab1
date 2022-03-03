@@ -7,15 +7,40 @@ function Task(props) {
     // checked holds all checkboxes that are checked
 
     let [checked, setChecked] = useState(props.item.isChecked); //why
+    let [blur, setBlur] = useState(props.item.isBlur);
 
-    useEffect(() => {
-        console.log(checked)
-    }, [checked])
+    // useEffect(() => {
+        if (checked) {
+            console.log(props.todo)
+            console.log("checked?", props.item.textInput, checked)
+        //     props.setCompletedList([...props.completedList,
+        //         {
+        //             id: props.item.id,
+        //             isChecked: true,
+        //             textInput: props.item.textInput,
+        //             blur: true
+        //         }]);
+        //     props.setUncompletedList(props.todo.filter(element => element.id != props.item.id))
+        } else {
+            console.log("uncheck", props.item.textInput, checked)
+            console.log(props.todo)
+        //     props.setCompletedList(props.completedList.filter(element => element.id != props.item.id));
+        //     props.setUncompletedList([...props.todo,
+        //         {
+        //             id: props.item.id,
+        //             isChecked: false,
+        //             textInput: props.item.textInput,
+        //             blur: false
+        //         }]);
+        //
+        }
+    // }, [checked])
 
     function toggleCheckbox() {
-
         props.onItemChanged(props.item.id, "isChecked", !props.item.isChecked)
-
+        props.onItemChanged(props.item.id, "blur", !props.item.isBlur)
+        setChecked(!checked)
+        setBlur(!blur)
 
 
         // if (!checked) {
@@ -43,7 +68,7 @@ function Task(props) {
         //     console.log("not checked")
         // }
 
-        setChecked(!checked);
+        // setChecked(!checked);
 
         // console.log(props.completedData)
         // if (!(props.completedData.includes(props.item))) {
@@ -82,7 +107,8 @@ function Task(props) {
             textData={props.item.textInput}
             taskId={props.item.id}
             onItemChanged={props.onItemChanged}
-            blur={props.item.blur}
+            // isBlur={props.item.isBlur}
+            isBlur={blur}
         />
         <br/>
     </>

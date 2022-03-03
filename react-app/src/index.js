@@ -10,25 +10,25 @@ const initialData = [
         id: generateUniqueID(),
         isChecked: false,
         textInput: "Buy Book",
-        blur: false
+        isBlur: false
     },
     {
         id: generateUniqueID,
         isChecked: false,
         textInput: "Take trash out",
-        blur: false
+        isBlur: false
     },
     {
         id: generateUniqueID,
         isChecked: false,
         textInput: "Super Super Super Super Super Super SuperSuper long",
-        blur: false
+        isBlur: false
     },
     {
         id: generateUniqueID,
         isChecked: true,
         textInput: "Do something",
-        blur: true
+        isBlur: true
     },
 ];
 

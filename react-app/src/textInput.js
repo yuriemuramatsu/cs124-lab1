@@ -6,7 +6,7 @@ function TextInput(props) {
 
     let colorID = "task1";
 
-    if (props.blur) {
+    if (props.isBlur) {
         colorID = "task2"
     } else {
         colorID = "task1"
