@@ -24,13 +24,28 @@ function App(props) {
         setTodo(newData)
         console.log(newData)
         console.log(todo)
-        setCompletedList(todo.filter(item => item.isChecked))
-        setUnCompletedList(todo.filter(item => !item.isChecked))
-
     }
 
-    function moveTasks(itemId) {
-
+    function moveTasks(checked, item) {
+        if (item.isChecked) {
+            setCompletedList([...completedList,
+                {
+                    id: item.id,
+                    isChecked: true,
+                    textInput: item.textInput,
+                    blur: true
+                }]);
+            setUnCompletedList(unCompletedList.filter(element => element.id != item.id))
+        } else {
+            setCompletedList(completedList.filter(element => element.id != item.id));
+            setUnCompletedList([...unCompletedList,
+                {
+                    id: item.id,
+                    isChecked: false,
+                    textInput: item.textInput,
+                    blur: false
+                }]);
+        }
     }
 
     function handleCompletedDeleted() {
@@ -69,6 +84,7 @@ function App(props) {
             setUncompletedList={setUnCompletedList}
             onItemChanged={handleItemChanged}
             isCompletedList={false}
+            moveTasks={moveTasks}
         />
         <h4>Completed</h4>
         <TaskList
@@ -81,6 +97,7 @@ function App(props) {
             setCompletedList={setCompletedList}
             setUncompletedList={setUnCompletedList}
             onItemChanged={handleItemChanged}
+            moveTasks={moveTasks}
         />
         <div className="editTasks">
             <AddButton

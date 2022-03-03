@@ -13,14 +13,7 @@ function Task(props) {
         if (checked) {
             console.log(props.todo)
             console.log("checked?", props.item.textInput, checked)
-        //     props.setCompletedList([...props.completedList,
-        //         {
-        //             id: props.item.id,
-        //             isChecked: true,
-        //             textInput: props.item.textInput,
-        //             blur: true
-        //         }]);
-        //     props.setUncompletedList(props.todo.filter(element => element.id != props.item.id))
+
         } else {
             console.log("uncheck", props.item.textInput, checked)
             console.log(props.todo)
@@ -41,6 +34,8 @@ function Task(props) {
         props.onItemChanged(props.item.id, "blur", !props.item.isBlur)
         setChecked(!checked)
         setBlur(!blur)
+        props.moveTasks(checked, props.item)
+
 
 
         // if (!checked) {

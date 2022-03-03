@@ -45,6 +45,7 @@ function TaskList(props) {
                             uncompletedList={props.uncompletedList}
                             setCompletedList={props.setCompletedList}
                             setUncompletedList={props.setUncompletedList}
+                            moveTasks={props.moveTasks}
                         />
                     </>
                 }) :
@@ -58,6 +59,7 @@ function TaskList(props) {
                             uncompletedList={props.uncompletedList}
                             setCompletedList={props.setCompletedList}
                             setUncompletedList={props.setUncompletedList}
+                            moveTasks={props.moveTasks}
 
                         />
                     </>
