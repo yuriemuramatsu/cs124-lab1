@@ -21,7 +21,7 @@ function Task(props) {
                     blur: true
                 }]);
             //props.setData(props.data.filter(element => element != props.item.id))
-            props.setData([...props.data].splice(props.element, 1));
+            props.setTodo([...props.todo].splice(props.element, 1));
         } else {
             props.setCompletedData([...props.completedData].splice(props.element, 1));
         }

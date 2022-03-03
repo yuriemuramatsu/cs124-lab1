@@ -11,7 +11,7 @@ function TaskList(props) {
                         onItemChanged={props.onItemChanged}
                         item={singleTask}
                         todo={props.todo}
-                        setTodo={props.set}
+                        setTodo={props.setTodo}
                         completedData={props.completedData}
                         setCompletedData={props.setCompletedData}
                     />
