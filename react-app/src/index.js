@@ -20,7 +20,7 @@ const initialData = [
     },
     {
         id: generateUniqueID,
-        isChecked: true,
+        isChecked: false,
         textInput: "Super Super Super Super Super Super SuperSuper long",
         blur: false
     },
