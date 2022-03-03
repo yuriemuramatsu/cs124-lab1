@@ -60,15 +60,12 @@ function App(props) {
                 onItemAdded={handleItemAdded}
             />
             {completedTaskList.length > 0 &&
-<<<<<<< HEAD
                 <DeleteButton
                     onItemDeleted={toggleModal}
                 />}
-=======
             <DeleteButton
                 onItemDeleted={handleItemDeleted}
             />}
->>>>>>> d97308392dddc69473aba5383bf41853fb36bb64
         </div>
         <div>
             {showAlert && <Alert onClose={toggleModal} onOK={alertDelete}>
