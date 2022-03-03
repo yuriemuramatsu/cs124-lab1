@@ -15,15 +15,10 @@ function App(props) {
 
     const [showAlert, setShowAlert] = useState(false);
 
-    const newData = []
-
     function handleItemChanged(itemId, field, newValue) {
         console.log(todo)
-
         const newData = todo.map(
             p => p.id === itemId ? {...p, [field]: newValue} : p)
-        console.log(newData)
-        console.log(todo)
         // setTodo([...newData])
         setTodo(newData)
         console.log(newData)
