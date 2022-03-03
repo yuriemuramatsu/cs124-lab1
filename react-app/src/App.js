@@ -30,10 +30,7 @@ function App(props) {
     }
 
     function handleCompletedDeleted() {
-<<<<<<< HEAD
         setTodo(todo.filter((item) => !completedTaskList.includes(item.id)));
-=======
->>>>>>> b074a7839eadcd11e1332efcd4c9aa8b96a3f3ab
         setCompletedTaskList([]);
         console.log(todo)
     }
@@ -67,7 +64,7 @@ function App(props) {
         />
         <h4>Completed</h4>
         <TaskList
-            data={completedTaskList}
+            todo={completedTaskList}
             // completedData={completedTaskList}
             // setCompletedData={setCompletedTaskList}
             // onItemChanged={handleItemChanged}
