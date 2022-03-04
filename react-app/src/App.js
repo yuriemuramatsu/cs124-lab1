@@ -22,20 +22,28 @@ function App(props) {
         // console.log(field)
         // console.log(newValue)
         // console.log(todo[0].id)
-        //
-        // console.log(todo[0].id === itemId)
 
-        const newData = todo.map(
-            p => p.id === itemId ? {...p, [field]: newValue} : {...p, [field]: newValue})
+        // const newData = todo.map(
+        //     p => p.id === itemId ? {...p, [field]: newValue} : p)
+            // p => p.id === itemId ? p : p)
+            // p => p.id === itemId ? {...p, [field]: "happy"} : p)
+        // console.log(newData)
+        // setTodo(newData)
+        // console.log(todo)
 
-        // console.log(newValue)
-
-        setTodo([...newData])
+        const newData1 = completedList.map(
+            p => p.id === itemId ? {...p, [field]: newValue} : p)
+        setCompletedList(newData1)
+        // console.log(newData1)
+        const newData2 = unCompletedList.map(
+            p => p.id === itemId ? {...p, [field]: newValue} : p)
+        setUnCompletedList(newData2)
 
         // console.log(newValue)
         // console.log(newData)
         // console.log(todo)
     }
+    // console.log(todo)
 
     function moveTasks(checked, item) {
         // if (item.isChecked && !unCompletedList.includes(item)) {
@@ -58,26 +66,24 @@ function App(props) {
         //         }]);
         // }
         if (completedList.includes(item)) {
-            console.log("checked")
-            setCompletedList([...completedList,
+            setUnCompletedList([...unCompletedList,
                     {
                         id: item.id,
                         isChecked: true,
                         textInput: item.textInput,
-                        blur: true
+                        isBlur:false
                     }]);
-            setUnCompletedList(unCompletedList.filter(element => element.id != item.id))
+            setCompletedList(completedList.filter(element => element.id !== item.id))
 
         } else {
-            console.log(checked)
-            setCompletedList(completedList.filter(element => element.id != item.id));
-            setUnCompletedList([...unCompletedList,
+            setCompletedList([...completedList,
                 {
                     id: item.id,
-                    isChecked: false,
+                    isChecked: true,
                     textInput: item.textInput,
-                    blur: false
+                    isBlur: true
                 }]);
+            setUnCompletedList(unCompletedList.filter(element => element.id !== item.id));
         }
     }
 
@@ -106,13 +112,14 @@ function App(props) {
         setShowAlert(!showAlert);
     }
 
+    // console.log(todo)
+
     return <>
         <h1>To Do List</h1>
         <TaskList
             todo={todo}
-            // setTodo={setTodo}
             completedList={completedList}
-            uncompletedList={unCompletedList}
+            unCompletedList={unCompletedList}
             setCompletedList={setCompletedList}
             setUncompletedList={setUnCompletedList}
             onItemChanged={handleItemChanged}
@@ -123,10 +130,8 @@ function App(props) {
         <TaskList
             todo={todo}
             isCompletedList={true}
-            // completedData={completedTaskList}
-            // setCompletedData={setCompletedTaskList}
             completedList={completedList}
-            uncompletedList={unCompletedList}
+            unCompletedList={unCompletedList}
             setCompletedList={setCompletedList}
             setUncompletedList={setUnCompletedList}
             onItemChanged={handleItemChanged}

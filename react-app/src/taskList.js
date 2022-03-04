@@ -15,7 +15,9 @@ function TaskList(props) {
     useEffect(() => {
         // console.log(props.completedList, "cl")
         // console.log(props.uncompletedList, "un")
-    }, [props.completedList, props.uncompletedList])
+    }, [props.completedList, props.unCompletedList])
+
+    // console.log(props.todo)
 
     return <>
         {/*{*/}
@@ -33,32 +35,33 @@ function TaskList(props) {
         {/*//     </>*/}
         {/*// })}*/}
 
+
         {
             props.isCompletedList ?
                 props.completedList.map(singleTask => {
-                    console.log(singleTask)
+                    // console.log(singleTask)
                     return <>
                         <Task
                             onItemChanged={props.onItemChanged}
                             item={singleTask}
-                            todo={props.todo}
+                            // todo={props.todo}
                             completedList={props.completedList}
-                            uncompletedList={props.uncompletedList}
+                            unCompletedList={props.unCompletedList}
                             setCompletedList={props.setCompletedList}
                             setUncompletedList={props.setUncompletedList}
                             moveTasks={props.moveTasks}
                         />
                     </>
                 }) :
-                props.uncompletedList.map(singleTask => {
-                    console.log(singleTask)
+                props.unCompletedList.map(singleTask => {
+                    // console.log(singleTask)
                     return <>
                         <Task
                             onItemChanged={props.onItemChanged}
                             item={singleTask}
-                            todo={props.todo}
+                            // todo={props.todo}
                             completedList={props.completedList}
-                            uncompletedList={props.uncompletedList}
+                            unCompletedList={props.unCompletedList}
                             setCompletedList={props.setCompletedList}
                             setUncompletedList={props.setUncompletedList}
                             moveTasks={props.moveTasks}

@@ -7,25 +7,25 @@ import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 
 const initialData = [
     {
-        id: generateUniqueID,
+        id: 1,
         isChecked: false,
         textInput: "Buy Book",
         isBlur: false
     },
     {
-        id: generateUniqueID,
+        id: 2,
         isChecked: false,
         textInput: "Take trash out",
         isBlur: false
     },
     {
-        id: generateUniqueID,
+        id: 3,
         isChecked: false,
         textInput: "Super Super Super Super Super Super SuperSuper long",
         isBlur: false
     },
     {
-        id: generateUniqueID,
+        id: 4,
         isChecked: true,
         textInput: "Do something",
         isBlur: true

@@ -11,7 +11,7 @@ function TextInput(props) {
     } else {
         colorID = "task1"
     }
-
+    // console.log(props.textData)
     // console.log(props.taskId)
 
     return <>

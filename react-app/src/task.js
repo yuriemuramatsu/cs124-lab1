@@ -90,9 +90,13 @@ function Task(props) {
         //     // console.log([...props.completedData].splice(props.element, 1))
         // }
     }
+    // console.log(props.todo)
+    // console.log(props.todo[0].textInput)
+    // console.log(props.todo[0].id)
 
-    console.log(props.todo.textInput)
-    console.log(props.todo.id)
+    // console.log(props.item)
+    // console.log(props.item.textInput)
+    // console.log(props.item.id)
 
     return <>
         <Checkbox
@@ -101,6 +105,7 @@ function Task(props) {
         />
         <TextInput
             onItemChanged={props.onItemChanged}
+            // this item.textInput is not editable
             textData={props.item.textInput}
             taskId={props.item.id}
             // textData={props.todo.textInput}
