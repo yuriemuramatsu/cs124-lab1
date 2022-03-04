@@ -101,10 +101,10 @@ function Task(props) {
         />
         <TextInput
             onItemChanged={props.onItemChanged}
-            // textData={props.item.textInput}
-            // taskId={props.item.id}
-            textData={props.todo.textInput}
-            taskId={props.todo.id}
+            textData={props.item.textInput}
+            taskId={props.item.id}
+            // textData={props.todo.textInput}
+            // taskId={props.todo.id}
             // isBlur={props.item.isBlur}
             isBlur={blur}
         />

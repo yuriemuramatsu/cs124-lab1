@@ -38,16 +38,38 @@ function App(props) {
     }
 
     function moveTasks(checked, item) {
-        if (item.isChecked) {
+        // if (item.isChecked && !unCompletedList.includes(item)) {
+        //     setCompletedList([...completedList,
+        //         {
+        //             id: item.id,
+        //             isChecked: true,
+        //             textInput: item.textInput,
+        //             blur: true
+        //         }]);
+        //     setUnCompletedList(unCompletedList.filter(element => element.id != item.id))
+        // } else {
+        //     setCompletedList(completedList.filter(element => element.id != item.id));
+        //     setUnCompletedList([...unCompletedList,
+        //         {
+        //             id: item.id,
+        //             isChecked: false,
+        //             textInput: item.textInput,
+        //             blur: false
+        //         }]);
+        // }
+        if (completedList.includes(item)) {
+            console.log("checked")
             setCompletedList([...completedList,
-                {
-                    id: item.id,
-                    isChecked: true,
-                    textInput: item.textInput,
-                    blur: true
-                }]);
+                    {
+                        id: item.id,
+                        isChecked: true,
+                        textInput: item.textInput,
+                        blur: true
+                    }]);
             setUnCompletedList(unCompletedList.filter(element => element.id != item.id))
+
         } else {
+            console.log(checked)
             setCompletedList(completedList.filter(element => element.id != item.id));
             setUnCompletedList([...unCompletedList,
                 {
