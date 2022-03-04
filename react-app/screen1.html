@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do's</title>
+    <link rel="stylesheet" href="src/lab1.css">
+</head>
+
+<body>
+<h1>To Do's</h1>
+<p>Type your task and click done. Then, mark the item as completed when you finish the task!</p>
+
+<form action="process.html" method="POST">
+    <input type="checkbox" id="completion" name="completion">
+
+    <input type="text" id="task" name="taskOne" class="todo">
+    <input type="submit" id="submit" value="Done"> <br><br>
+    <input type="submit" id="add" value="Add a todo">
+    <input type="submit" id="delete" value="Delete Completed">
+</form>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>-->
+
+<script type="text/babel">
+
+    const checkboxButton = document.getElementById("completion");
+    const taskInput = document.getElementById("task");
+    const deleteButton = document.getElementById("delete");
+
+    const test = document.getElementById("completion2");
+
+    function clickHandler(){
+        alert("test!!!");
+    }
+    test.addEventListener('click', clickHandler, false);
+
+    console.log("hi");
+
+    deleteButton.addEventListener("click", () =>{
+        console.log("test")
+        alert("hello!");
+    })
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+        taskInput.addEventListener('click', () => {
+            console.log("test")
+            alert("hello!");
+        })
+        checkboxButton.addEventListener("click", () => {
+            console.log("hello")
+            alert("hey!");
+        });
+    })
+
+
+</script>
+
+</body>
+</html>
