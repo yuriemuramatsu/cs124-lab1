@@ -86,7 +86,7 @@ function App(props) {
             isCompletedList={false}
             moveTasks={moveTasks}
         />
-        <h4>Completed</h4>
+        {completedList.length > 0 && <h4>Completed</h4>}
         <TaskList
             todo={todo}
             isCompletedList={true}
