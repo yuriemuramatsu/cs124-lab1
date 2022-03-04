@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 
 import AddButton from "./addButton";
 import DeleteButton from "./deleteButton";
@@ -20,7 +20,6 @@ function App(props) {
         const newData1 = completedList.map(
             p => p.id === itemId ? {...p, [field]: newValue} : p)
         setCompletedList(newData1)
-        // console.log(newData1)
         const newData2 = unCompletedList.map(
             p => p.id === itemId ? {...p, [field]: newValue} : p)
         setUnCompletedList(newData2)
@@ -71,8 +70,6 @@ function App(props) {
     function toggleModal() {
         setShowAlert(!showAlert);
     }
-
-    // console.log(todo)
 
     return <>
         <h1>To Do List</h1>

@@ -10,7 +10,7 @@
 .editTasks {
   display:flex;
   flex-direction:row;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -21,6 +21,12 @@
 
 h1 {
   font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 40px;
+}
+
+h4 {
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 20px;
 }
 
 .App-header {

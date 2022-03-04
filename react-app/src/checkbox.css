@@ -1,3 +1,4 @@
-checkbox {
-    padding-right: 15px;
+.checkbox {
+    height: 15px;
+    width: 20px;
 }

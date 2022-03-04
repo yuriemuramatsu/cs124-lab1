@@ -5,3 +5,10 @@
 #task2{
     color: lightgrey;
 }
+
+.text-input {
+    height: 20px;
+    width: 200px;
+    font-size: 15px;
+    margin-bottom: 2px;
+}
