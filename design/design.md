@@ -7,36 +7,36 @@
 
 [//]: # (=======)
 ### Design decisions
-We followed the diagonal format, where the top few lines are longer and the bottom few lines are shorter.
+Starting with the way we structured our todo list, we decided to split the list into completed and uncompleted tasks. This is so the reader can get a better understanding of which tasks are completed and which are uncompleted.
 
-[//]: # (![Diagonal format]&#40;diagonal.png&#41;)
+![Completed uncompleted](completedUncompleted.png)
 
-We also clumped together all the tasks, since they are associated together, with the completed tasks on top.
-
-![Clump format](clump.png)
+We also decided to customize when to show the Completed header and the Delete Completed button. So, now when there are no tasks in the completed section, the completed header and the deleted button disappear.
+So, we changed it from:
+![yes Completed](completedStillShowing.png)
+to:
+![No Completed](completedNotShowing.png)
 
 ### Alternative designs
-We decided to use green for the "Done" and "Add" buttons,
-since green is associated with growing, natural, and successful. 
-Similarly, we used red for the "Delete completed" button, since apps typically use green for yes and red for no.
+We considered using pop-up messages for adding and deleting todos, but then we decided on just having a pop-up message for when the user wants to delete all completed tasks in case the user accidentally presses it.
 
-![Add_delete format](add_delete.png)
+![Delete confirmation](deleteConfirmation.png)
 
 
 [//]: # (>>>>>>> 2313ce5d6f6d0d1b063e67c572bb022301b3bb2d)
 ### User testing
-We tested with one potential user who gave us critical insights. She commented on whether having a "Done" button is
-necessary and that "Add a todo" can be shortened as "Add" and "Delete Completed" can be shorted as "Delete." Since this
-is an early stage in development, we are still keeping the design as it is, but we will definitely take them into
-consideration. She also mentioned that "Add a todo" and "Delete Completed" buttons should be at the bottom; we agree
-with this and are likely to implement this change as we move onto making this more dynamic.
+We tested with the same potential user as last time, and she liked that we changed from "Add a todo" to "Add." She also 
+enjoyed that the "Done" button no longer exists, which she mentioned last time as redundant. 
+
+We also tested with another user who mentioned the text size and overall app was too small, so we increased all the components' sizes.
+
+![Bigger font](biggerFont.png)
 
 ### Challenges we faced
-We had a bit of trouble in the beginning with getting used to pulling before doing any work and pushing after completing 
-some tasks. We also found it difficult to make these design choices when they are so static; we are excited to move onto
-making these pages and buttons dynamic!
+We decided to introduce a whole new section "Completed," which shows all the items that are marked as completed. This
+posed some challenges because we had to implement more constructors to keep track of all the different todos. Additionally, managing
+the various props and states were quite confusing. But, after going to a couple grutoring sessions, we debugged all of our challenges.
 
 ### Parts of the design we're most proud of
-We feel proud of our color and font choices. The font is light-hearted and encouraging of completing tasks; the maroon
-color is clearly indicative of deleting, but the color is not too alarming or aggressive. The green colors are fitting
-for "Done" and "Add a todo," but easy to distinguish as they have different shades. 
+As was the case last time, we feel proud of the simplicity of the color and structure, which leads to the ease of
+understanding and using. Having "Completed" section also added a different layer to this app as a todo checker!
