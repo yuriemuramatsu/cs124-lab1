@@ -10,13 +10,13 @@ function Task(props) {
     let [blur, setBlur] = useState(props.item.isBlur);
 
     // useEffect(() => {
-        if (checked) {
-            console.log(props.todo)
-            console.log("checked?", props.item.textInput, checked)
+    if (checked) {
+        // console.log(props.todo)
+        // console.log("checked?", props.item.textInput, checked)
 
-        } else {
-            console.log("uncheck", props.item.textInput, checked)
-            console.log(props.todo)
+    } else {
+        // console.log("uncheck", props.item.textInput, checked)
+        // console.log(props.todo)
         //     props.setCompletedList(props.completedList.filter(element => element.id != props.item.id));
         //     props.setUncompletedList([...props.todo,
         //         {
@@ -26,7 +26,8 @@ function Task(props) {
         //             blur: false
         //         }]);
         //
-        }
+    }
+
     // }, [checked])
 
     function toggleCheckbox() {
@@ -35,8 +36,6 @@ function Task(props) {
         setChecked(!checked)
         setBlur(!blur)
         props.moveTasks(checked, props.item)
-
-
 
         // if (!checked) {
         //     props.setCompletedData([...props.completedData,
@@ -92,16 +91,20 @@ function Task(props) {
         // }
     }
 
+    console.log(props.todo.textInput)
+    console.log(props.todo.id)
+
     return <>
         <Checkbox
             toggleCheck={toggleCheckbox}
             checkedBox={checked}
         />
         <TextInput
-            // onItemChanged={props.onItemChanged}
-            textData={props.item.textInput}
-            taskId={props.item.id}
             onItemChanged={props.onItemChanged}
+            // textData={props.item.textInput}
+            // taskId={props.item.id}
+            textData={props.todo.textInput}
+            taskId={props.todo.id}
             // isBlur={props.item.isBlur}
             isBlur={blur}
         />

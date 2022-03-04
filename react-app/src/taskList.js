@@ -9,12 +9,12 @@ import Task from './task'
 // isCompletedList={false}
 
 function TaskList(props) {
-    console.log("hi")
+    // console.log("hi")
     // const subList = props.todo.filter(item => props.isCompletedList && item.isChecked);
 
     useEffect(() => {
-        console.log(props.completedList, "cl")
-        console.log(props.uncompletedList, "un")
+        // console.log(props.completedList, "cl")
+        // console.log(props.uncompletedList, "un")
     }, [props.completedList, props.uncompletedList])
 
     return <>
@@ -36,6 +36,7 @@ function TaskList(props) {
         {
             props.isCompletedList ?
                 props.completedList.map(singleTask => {
+                    console.log(singleTask)
                     return <>
                         <Task
                             onItemChanged={props.onItemChanged}
@@ -50,6 +51,7 @@ function TaskList(props) {
                     </>
                 }) :
                 props.uncompletedList.map(singleTask => {
+                    console.log(singleTask)
                     return <>
                         <Task
                             onItemChanged={props.onItemChanged}
@@ -60,7 +62,6 @@ function TaskList(props) {
                             setCompletedList={props.setCompletedList}
                             setUncompletedList={props.setUncompletedList}
                             moveTasks={props.moveTasks}
-
                         />
                     </>
                 })

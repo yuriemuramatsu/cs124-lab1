@@ -7,7 +7,7 @@ import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 
 const initialData = [
     {
-        id: generateUniqueID(),
+        id: generateUniqueID,
         isChecked: false,
         textInput: "Buy Book",
         isBlur: false

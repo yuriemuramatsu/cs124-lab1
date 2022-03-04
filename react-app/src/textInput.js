@@ -12,6 +12,8 @@ function TextInput(props) {
         colorID = "task1"
     }
 
+    // console.log(props.taskId)
+
     return <>
         <input
             type="text" name="task2" id={colorID}

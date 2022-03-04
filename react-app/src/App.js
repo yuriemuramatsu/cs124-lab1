@@ -17,13 +17,24 @@ function App(props) {
     const [showAlert, setShowAlert] = useState(false);
 
     function handleItemChanged(itemId, field, newValue) {
-        console.log(todo)
+        // console.log(todo)
+        // console.log(itemId)
+        // console.log(field)
+        // console.log(newValue)
+        // console.log(todo[0].id)
+        //
+        // console.log(todo[0].id === itemId)
+
         const newData = todo.map(
-            p => p.id === itemId ? {...p, [field]: newValue} : p)
-        // setTodo([...newData])
-        setTodo(newData)
-        console.log(newData)
-        console.log(todo)
+            p => p.id === itemId ? {...p, [field]: newValue} : {...p, [field]: newValue})
+
+        // console.log(newValue)
+
+        setTodo([...newData])
+
+        // console.log(newValue)
+        // console.log(newData)
+        // console.log(todo)
     }
 
     function moveTasks(checked, item) {
