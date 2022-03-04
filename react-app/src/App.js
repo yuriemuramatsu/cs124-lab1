@@ -101,9 +101,9 @@ function App(props) {
             <AddButton
                 onItemAdded={handleItemAdded}
             />
-            <DeleteButton
-                onItemDeleted={handleCompletedDeleted}
-            />
+            {completedList.length > 0 && <DeleteButton
+                onItemDeleted={toggleModal}
+            />}
         </div>
         <div>
             {showAlert && <Alert onClose={toggleModal} onOK={alertDelete}>
